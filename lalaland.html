@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>6 Interstellar reviews</title>
+</head>
+<body style="background-color: black; color: white;">
+    <h1 align="center"><font color="red">La La Land reviews</font></h1><hr><hr>
+<font size="5">
+<pre>
+
+
+
+1] as_if_itsanisha:
+La La Land" starring Ryan Gosling, 
+Emma Stone, John Legend, and many other 
+A-listing Actors, is an absolute must watch. 
+In addition to showcasing the early life of 
+Mia and Sebastian,La La Land perfectly displays 
+how in life"The show must go on" and how 
+life doesn't always go as planned. La La Land 
+uses lighting, colouring and exceptional 
+cinematography to tell the stories of Mia and 
+Sebastian in their journeys for success.
+<hr>
+
+2] allcool.kartik
+This is the most heartbreaking movie I have 
+ever seen in my life. My heart is shattered
+ and I can never hear any of those songs 
+again or I will pass away.
+<hr>
+
+3]blackloverboy3
+It was SO good but the ending was not what I 
+expected. The ending was really unexpected I 
+feel like it would’ve been better if the ending 
+was like how a lot of people would’ve expected it to be. 
+It was a cool twist though. The songs are so 
+good though like omg. The jazz. It’s amazing 
+like omggg. Other then the ending, so good 
+literally amazing I would totally watch it again.
+<hr>
+
+4]roshni_aturhelp
+This Movie is my personalf favorite. People will 
+hate it and say things but only those who have 
+loved someone or have ad their first love will 
+truly understand this movie and connect with it. 
+Which is why this movie is my favorite, I really 
+relate to it and learned from the ending that 
+sometimes two people can forever love each other 
+but they have their own path for the best. I hope 
+this movie gets more recognition. The music is 
+also absolutely beautiful and catchy. I just 
+LOVE THIS MOVIE SO MUCH!!!
+<hr>
+
+5]praffulthebest
+The thing with Damien Chazelle is he loves to 
+write about music and musicians, but he isn’t one, 
+and doesn’t really know the first thing about it. 
+It’s weird. It’s just what he imagines being a 
+musician must be like. As someone who is a musician, 
+I do know what it’s like, so I’m not really 
+interested in his imaginings.
+<hr>
+
+6]eatingchips_preeti?
+the rating of this movie reminded me of reviews 
+on lazada...they gave the product 4 stars for 
+receiving item, but hadnt tested or used it. hve 
+people really watched this? i found it boring </pre>
+</font>
+</body>
+</html>
+
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Reviews</title>
+
+<style>
+.comment-box {
+    width: 80%;
+    margin: 20px auto;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    background-color: #df0000;
+}
+
+.comment {
+    margin-bottom: 15px;
+    padding: 10px;
+    border: 1px solid #e60d0d;
+    border-radius: 5px;
+    background-color: white;
+    text-align: left;
+}
+
+.shadow-box {
+    box-shadow: 0px 0px 10px rgba(0,0,1,0.5);
+    border-radius: 8px;
+    padding: 15px;
+    background-color: red;
+    color: black;
+}
+</style>
+</head>
+
+<body align="center" bgcolor="grey">
+
+<p class="shadow-box">
+<font size="6">Here you can add some reviews of your own to help others!</font>
+</p>
+
+<div class="comment-box">
+<h2><font size="6">Reviews</font></h2>
+
+<form id="commentForm">
+    Your Name:<br>
+    <input type="text" id="name" required><br><br>
+
+    Comment:<br>
+    <textarea id="comment" rows="4" required></textarea><br><br>
+
+    <button type="submit"><font size="5">Post Comment</font></button>
+</form>
+</div>
+
+<div id="comments"></div>
+
+<script>
+const movieName = "lalaland";
+const storageKey = "comments_" + movieName;
+
+// Load saved comments
+window.onload = function () {
+    let savedComments = JSON.parse(localStorage.getItem(storageKey)) || [];
+    savedComments.forEach((c, i) => showComment(c, i));
+};
+
+// Save comment
+document.getElementById("commentForm").addEventListener("submit", function (e) {
+    e.preventDefault();
+
+    let name = document.getElementById("name").value;
+    let comment = document.getElementById("comment").value;
+
+    let commentData = { name, comment };
+
+    let comments = JSON.parse(localStorage.getItem(storageKey)) || [];
+    comments.unshift(commentData);
+    localStorage.setItem(storageKey, JSON.stringify(comments));
+
+    showComment(commentData, 0);
+
+    document.getElementById("name").value = "";
+    document.getElementById("comment").value = "";
+});
+
+// Show comment
+function showComment(data, index) {
+    let div = document.createElement("div");
+    div.className = "comment";
+
+    div.innerHTML = `
+        <b>${data.name}:</b> ${data.comment}<br>
+        <button onclick="deleteComment(${index})">Delete</button>
+    `;
+
+    document.getElementById("comments").prepend(div);
+}
+
+// Delete comment
+function deleteComment(index) {
+    let comments = JSON.parse(localStorage.getItem(storageKey)) || [];
+    comments.splice(index, 1);
+    localStorage.setItem(storageKey, JSON.stringify(comments));
+    location.reload();
+}
+</script>
+
+</body>
+</html>
+
+        
+
+
+
+
+
+

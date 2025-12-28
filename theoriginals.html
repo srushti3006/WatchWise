@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>6 Interstellar reviews</title>
+</head>
+<body style="background-color: black; color: white;">
+    <h1 align="center"><font color="red">The Originals reviews</font></h1><hr><hr>
+<font size="5">
+<pre>
+
+
+
+1] VampireLoreQueen:
+The Originals is honestly one of the best supernatural dramas 
+I’ve ever watched. The Mikaelson family is chaotic, tragic, and 
+lovable all at once. Klaus’ character development is absolute 
+perfection—watching him struggle between being a monster and a 
+father hit me right in the heart. The writing feels rich, the New 
+Orleans setting is magical, and the soundtrack? Chef’s kiss. This 
+show gave me everything I wanted and more.
+<hr>
+
+2]CasualBingeWatcher:
+I enjoyed The Originals, but not as much as I expected to after 
+watching The Vampire Diaries. Some episodes were slow, and the politics 
+between the witches, vampires, and werewolves sometimes felt repetitive. 
+BUT I’ll admit the action scenes were great, and Elijah carried the 
+entire show with his elegance and calm brutality. Overall solid, but 
+not a must-watch for me.
+<hr>
+
+3]TheoTheCritic
+Honestly? Not my cup of tea. The show is heavy on melodrama and endless
+ family speeches that got tiring fast. I kept waiting for a real plot 
+twist, but many of the conflicts felt recycled. The performances were 
+strong, but the story didn’t grip me. Fans of supernatural soap operas 
+will definitely enjoy this, but I couldn't fully connect.
+<hr>
+
+4]NOLAAddict
+Absolutely adored it. As someone who LOVES New Orleans, the atmosphere 
+and culture the show captured made me fall in love instantly. The supernatural 
+lore mixed with the city's history was brilliant. Rebekah is my favorite 
+character of all time—she deserved the world! I rewatch the series every 
+year, and it never disappoints.
+<hr>
+
+5]PlotTwistHunter
+The Originals is intense, emotional, and unpredictable in the best ways. 
+While the show occasionally gets too dramatic, the last few seasons are 
+some of the most powerful storytelling I’ve seen in a supernatural series. 
+The relationships feel raw, and the family theme is surprisingly deep. A 
+great balance of dark fantasy and heartfelt moments.
+<hr>
+
+ </pre>
+</font>
+</body>
+</html>
+
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Reviews</title>
+
+<style>
+.comment-box {
+    width: 80%;
+    margin: 20px auto;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    background-color: #df0000;
+}
+
+.comment {
+    margin-bottom: 15px;
+    padding: 10px;
+    border: 1px solid #e60d0d;
+    border-radius: 5px;
+    background-color: white;
+    text-align: left;
+}
+
+.shadow-box {
+    box-shadow: 0px 0px 10px rgba(0,0,1,0.5);
+    border-radius: 8px;
+    padding: 15px;
+    background-color: red;
+    color: black;
+}
+</style>
+</head>
+
+<body align="center" bgcolor="grey">
+
+<p class="shadow-box">
+<font size="6">Here you can add some reviews of your own to help others!</font>
+</p>
+
+<div class="comment-box">
+<h2><font size="6">Reviews</font></h2>
+
+<form id="commentForm">
+    Your Name:<br>
+    <input type="text" id="name" required><br><br>
+
+    Comment:<br>
+    <textarea id="comment" rows="4" required></textarea><br><br>
+
+    <button type="submit"><font size="5">Post Comment</font></button>
+</form>
+</div>
+
+<div id="comments"></div>
+
+<script>
+const movieName = "to";
+const storageKey = "comments_" + movieName;
+
+// Load saved comments
+window.onload = function () {
+    let savedComments = JSON.parse(localStorage.getItem(storageKey)) || [];
+    savedComments.forEach((c, i) => showComment(c, i));
+};
+
+// Save comment
+document.getElementById("commentForm").addEventListener("submit", function (e) {
+    e.preventDefault();
+
+    let name = document.getElementById("name").value;
+    let comment = document.getElementById("comment").value;
+
+    let commentData = { name, comment };
+
+    let comments = JSON.parse(localStorage.getItem(storageKey)) || [];
+    comments.unshift(commentData);
+    localStorage.setItem(storageKey, JSON.stringify(comments));
+
+    showComment(commentData, 0);
+
+    document.getElementById("name").value = "";
+    document.getElementById("comment").value = "";
+});
+
+// Show comment
+function showComment(data, index) {
+    let div = document.createElement("div");
+    div.className = "comment";
+
+    div.innerHTML = `
+        <b>${data.name}:</b> ${data.comment}<br>
+        <button onclick="deleteComment(${index})">Delete</button>
+    `;
+
+    document.getElementById("comments").prepend(div);
+}
+
+// Delete comment
+function deleteComment(index) {
+    let comments = JSON.parse(localStorage.getItem(storageKey)) || [];
+    comments.splice(index, 1);
+    localStorage.setItem(storageKey, JSON.stringify(comments));
+    location.reload();
+}
+</script>
+
+</body>
+</html>
+
+        

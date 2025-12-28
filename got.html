@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>6 Interstellar reviews</title>
+</head>
+<body style="background-color: black; color: white;">
+    <h1 align="center"><font color="red"> Game of Thrones reviews</font></h1><hr><hr>
+<font size="5">
+<pre>
+
+
+
+
+1] TheSitcomFan
+Game of Thrones is one of the most interesting series 
+I have ever watched. The story has kings, wars, dragons, 
+and lots of twists. Sometimes it gets confusing because 
+there are many characters, but the suspense keeps you
+hooked. I enjoyed the action scenes and the shocking 
+moments in every season. It’s a great series for people 
+who like fantasy and drama.
+<hr>
+
+2] allcool.kartik
+Game of Thrones is a remarkable achievement in 
+television storytelling, especially in its earlier
+seasons. The series excels in world-building,complex 
+characters, and morally grey conflicts. Performances 
+from actors like Peter Dinklage, Emilia Clarke, and 
+Lena Headey elevate the narrative. While the final 
+season received criticism for rushed pacing and 
+inconsistent writing, the show remains a landmark in 
+cinematic TV for its ambitious scale and political depth.
+
+<hr>
+
+3]blackloverboy3
+I absolutely loved Game of Thrones! The battles, betrayals, 
+dragons, and drama kept me glued to the screen. Every 
+episode felt unpredictable, and the characters—like Jon 
+Snow, Arya Stark, and Tyrion Lannister—are unforgettable. 
+The show gave me chills, made me cry, and shocked me 
+multiple times. Even with a weaker last season, it’s still 
+one of the best series ever made!
+<hr>
+
+4]roshni_aturhelp
+Game of Thrones provides a rich text for academic study 
+due to its exploration of power, politics, gender, and 
+morality. The series draws inspiration from medieval history 
+and examines themes such as succession, war ethics, 
+leadership, and social hierarchy. Its multi-narrative structure
+ and diverse character arcs make it a valuable subject for 
+analyzing contemporary fantasy storytelling. Additionally, 
+the show’s cultural impact demonstrates the global reach 
+of premium television production.
+<hr>
+
+5]praffulthebest
+I enjoyed watching Game of Thrones because it’s full 
+of action, suspense, and emotional moments. Some scenes 
+were very dark or violent, but they made the story more 
+realistic. My favorite part was watching the characters
+grow and change over the seasons. The dragons and big 
+battles were amazing to watch. Overall, it’s a very 
+entertaining series.
+<hr>
+
+</pre>
+</font>
+</body>
+</html>
+
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Reviews</title>
+
+<style>
+.comment-box {
+    width: 80%;
+    margin: 20px auto;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    background-color: #df0000;
+}
+
+.comment {
+    margin-bottom: 15px;
+    padding: 10px;
+    border: 1px solid #e60d0d;
+    border-radius: 5px;
+    background-color: white;
+    text-align: left;
+}
+
+.shadow-box {
+    box-shadow: 0px 0px 10px rgba(0,0,1,0.5);
+    border-radius: 8px;
+    padding: 15px;
+    background-color: red;
+    color: black;
+}
+</style>
+</head>
+
+<body align="center" bgcolor="grey">
+
+<p class="shadow-box">
+<font size="6">Here you can add some reviews of your own to help others!</font>
+</p>
+
+<div class="comment-box">
+<h2><font size="6">Reviews</font></h2>
+
+<form id="commentForm">
+    Your Name:<br>
+    <input type="text" id="name" required><br><br>
+
+    Comment:<br>
+    <textarea id="comment" rows="4" required></textarea><br><br>
+
+    <button type="submit"><font size="5">Post Comment</font></button>
+</form>
+</div>
+
+<div id="comments"></div>
+
+<script>
+const movieName = "got";
+const storageKey = "comments_" + movieName;
+
+// Load saved comments
+window.onload = function () {
+    let savedComments = JSON.parse(localStorage.getItem(storageKey)) || [];
+    savedComments.forEach((c, i) => showComment(c, i));
+};
+
+// Save comment
+document.getElementById("commentForm").addEventListener("submit", function (e) {
+    e.preventDefault();
+
+    let name = document.getElementById("name").value;
+    let comment = document.getElementById("comment").value;
+
+    let commentData = { name, comment };
+
+    let comments = JSON.parse(localStorage.getItem(storageKey)) || [];
+    comments.unshift(commentData);
+    localStorage.setItem(storageKey, JSON.stringify(comments));
+
+    showComment(commentData, 0);
+
+    document.getElementById("name").value = "";
+    document.getElementById("comment").value = "";
+});
+
+// Show comment
+function showComment(data, index) {
+    let div = document.createElement("div");
+    div.className = "comment";
+
+    div.innerHTML = `
+        <b>${data.name}:</b> ${data.comment}<br>
+        <button onclick="deleteComment(${index})">Delete</button>
+    `;
+
+    document.getElementById("comments").prepend(div);
+}
+
+// Delete comment
+function deleteComment(index) {
+    let comments = JSON.parse(localStorage.getItem(storageKey)) || [];
+    comments.splice(index, 1);
+    localStorage.setItem(storageKey, JSON.stringify(comments));
+    location.reload();
+}
+</script>
+
+</body>
+</html>
+
+        

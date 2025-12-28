@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>6 Interstellar reviews</title>
+</head>
+<body style="background-color: black; color: white;">
+    <h1 align="center"><font color="red">Ocean's 8 reviews</font></h1><hr><hr>
+<font size="5">
+<align="center">
+<pre>
+
+
+
+
+1] as_if_itsanisha:
+Ocean’s 8 is a fun and entertaining heist movie. The 
+all-female cast brings a fresh vibe to the Ocean’s 
+series. The story is easy to follow, and the heist 
+scenes are exciting. Some parts feel a little slow, 
+but overall it’s enjoyable. It’s a good movie to 
+watch with friends if you like crime and suspense.
+<hr>
+
+2] allcool.kartik
+Ocean’s 8 revitalizes the franchise with a stylish 
+female-led cast, including Sandra Bullock, Cate Blanchett, 
+and Anne Hathaway. The film excels in costume design, 
+set pieces, and its slick tone. However, the stakes 
+feel lower compared to earlier Ocean’s films, and the 
+tension is often minimal. While the plot is 
+predictable, the charisma of the cast and 
+the smooth execution make it a fun, watchable heist movie.
+<hr>
+
+3]blackloverboy3
+I loved Ocean’s 8! The cast is amazing—every 
+actress fits her role perfectly. 
+The fashion, humor, and clever planning of the 
+heist kept me hooked from start to finish. 
+Anne Hathaway absolutely shines, and the whole 
+movie feels glamorous and cool. It’s not super 
+intense, but it’s very stylish and enjoyable. 
+I’d totally recommend it for a fun movie night!
+<hr>
+
+4]roshni_aturhelp
+Ocean’s 8 offers an interesting commentary 
+on the representation of women in heist 
+cinema. The film subverts traditional 
+gender roles by placing women at the center 
+of a complex, high-risk operation. It 
+also highlights themes of trust, loyalty, 
+and strategy within an all-female team. 
+While the narrative structure follows 
+conventional heist tropes, the film’s 
+focus on fashion, social status, and 
+collaboration provides a modern reinterpretation of the genre.
+<hr>
+
+5]praffulthebest
+Ocean’s 8 is a stylish and enjoyable movie. The 
+heist is fun to watch, and the actresses make the 
+movie even better. It doesn’t have a lot of action, 
+but the humor and teamwork keep it interesting. 
+The Met Gala setting makes the film look beautiful. 
+Overall, it’s a cool and light movie that’s perfect 
+for relaxing.
+<hr>
+
+ </pre>
+</font>
+</body>
+</html>
+
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Reviews</title>
+
+<style>
+.comment-box {
+    width: 80%;
+    margin: 20px auto;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    background-color: #df0000;
+}
+
+.comment {
+    margin-bottom: 15px;
+    padding: 10px;
+    border: 1px solid #e60d0d;
+    border-radius: 5px;
+    background-color: white;
+    text-align: left;
+}
+
+.shadow-box {
+    box-shadow: 0px 0px 10px rgba(0,0,1,0.5);
+    border-radius: 8px;
+    padding: 15px;
+    background-color: red;
+    color: black;
+}
+</style>
+</head>
+
+<body align="center" bgcolor="grey">
+
+<p class="shadow-box">
+<font size="6">Here you can add some reviews of your own to help others!</font>
+</p>
+
+<div class="comment-box">
+<h2><font size="6">Reviews</font></h2>
+
+<form id="commentForm">
+    Your Name:<br>
+    <input type="text" id="name" required><br><br>
+
+    Comment:<br>
+    <textarea id="comment" rows="4" required></textarea><br><br>
+
+    <button type="submit"><font size="5">Post Comment</font></button>
+</form>
+</div>
+
+<div id="comments"></div>
+
+<script>
+const movieName = "ocean";
+const storageKey = "comments_" + movieName;
+
+// Load saved comments
+window.onload = function () {
+    let savedComments = JSON.parse(localStorage.getItem(storageKey)) || [];
+    savedComments.forEach((c, i) => showComment(c, i));
+};
+
+// Save comment
+document.getElementById("commentForm").addEventListener("submit", function (e) {
+    e.preventDefault();
+
+    let name = document.getElementById("name").value;
+    let comment = document.getElementById("comment").value;
+
+    let commentData = { name, comment };
+
+    let comments = JSON.parse(localStorage.getItem(storageKey)) || [];
+    comments.unshift(commentData);
+    localStorage.setItem(storageKey, JSON.stringify(comments));
+
+    showComment(commentData, 0);
+
+    document.getElementById("name").value = "";
+    document.getElementById("comment").value = "";
+});
+
+// Show comment
+function showComment(data, index) {
+    let div = document.createElement("div");
+    div.className = "comment";
+
+    div.innerHTML = `
+        <b>${data.name}:</b> ${data.comment}<br>
+        <button onclick="deleteComment(${index})">Delete</button>
+    `;
+
+    document.getElementById("comments").prepend(div);
+}
+
+// Delete comment
+function deleteComment(index) {
+    let comments = JSON.parse(localStorage.getItem(storageKey)) || [];
+    comments.splice(index, 1);
+    localStorage.setItem(storageKey, JSON.stringify(comments));
+    location.reload();
+}
+</script>
+
+</body>
+</html>
+
+        
+
+
+
+
+
+

@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>6 Interstellar reviews</title>
+</head>
+<body style="background-color: black; color: white;">
+    <h1 align="center"><font color="red">Teen Wolf reviews</font></h1><hr><hr>
+<font size="5">
+<pre>
+
+
+
+1] HowlingAtMidnight:
+Teen Wolf is one of those shows that starts good
+ and gets AMAZING. The character growth is 
+everything—Scott’s transformation from awkward 
+teen to true Alpha is so inspiring. Stiles absolutely 
+steals every scene, and the supernatural creatures 
+introduced each season keep things fresh. The mix 
+of humor, horror, and heart is unbeatable. I still 
+rewatch it whenever I miss Beacon Hills.
+<hr>
+
+2]CasualLycan:
+I enjoyed Teen Wolf, but it definitely had its 
+ups and downs. Some seasons were top-tier, while 
+others felt too rushed or confusing. The special 
+effects aged weirdly too. But the chemistry between 
+the cast, especially Scott and Stiles, kept me 
+watching. A fun show, but not without flaws.
+<hr>
+
+3]CriticalFang
+Not impressed. The plotlines often felt inconsistent, 
+and the show leaned too heavily on drama rather than 
+actual horror. I also found some character arcs 
+unresolved or abandoned. While the concept had potential, 
+the execution didn’t hook me. Cool creatures though—that
+ part was creative.
+<hr>
+
+4]BeaconHillsForever
+Absolute masterpiece for a supernatural teen series! 
+The friendships, the loyalty, the humor—everything hit 
+perfectly for me. The Nogitsune arc alone is worth the 
+watch. Stiles is one of the best TV characters ever 
+written, hands down. The show made me laugh, cry, and 
+scream at my screen. I’ll always love it.
+<hr>
+
+5]PlotSeeker101
+Teen Wolf is chaotic, creepy, and surprisingly emotional 
+in all the right ways. Some plot holes? Sure. But the 
+suspense and character-driven moments more than make
+ up for it. The villains are unique, and the mythologies 
+are well thought out. Definitely one of the better 
+supernatural teen dramas out there.
+<hr>
+
+ </pre>
+</font>
+</body>
+</html>
+
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Reviews</title>
+
+<style>
+.comment-box {
+    width: 80%;
+    margin: 20px auto;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    background-color: #df0000;
+}
+
+.comment {
+    margin-bottom: 15px;
+    padding: 10px;
+    border: 1px solid #e60d0d;
+    border-radius: 5px;
+    background-color: white;
+    text-align: left;
+}
+
+.shadow-box {
+    box-shadow: 0px 0px 10px rgba(0,0,1,0.5);
+    border-radius: 8px;
+    padding: 15px;
+    background-color: red;
+    color: black;
+}
+</style>
+</head>
+
+<body align="center" bgcolor="grey">
+
+<p class="shadow-box">
+<font size="6">Here you can add some reviews of your own to help others!</font>
+</p>
+
+<div class="comment-box">
+<h2><font size="6">Reviews</font></h2>
+
+<form id="commentForm">
+    Your Name:<br>
+    <input type="text" id="name" required><br><br>
+
+    Comment:<br>
+    <textarea id="comment" rows="4" required></textarea><br><br>
+
+    <button type="submit"><font size="5">Post Comment</font></button>
+</form>
+</div>
+
+<div id="comments"></div>
+
+<script>
+const movieName = "teenwolf";
+const storageKey = "comments_" + movieName;
+
+// Load saved comments
+window.onload = function () {
+    let savedComments = JSON.parse(localStorage.getItem(storageKey)) || [];
+    savedComments.forEach((c, i) => showComment(c, i));
+};
+
+// Save comment
+document.getElementById("commentForm").addEventListener("submit", function (e) {
+    e.preventDefault();
+
+    let name = document.getElementById("name").value;
+    let comment = document.getElementById("comment").value;
+
+    let commentData = { name, comment };
+
+    let comments = JSON.parse(localStorage.getItem(storageKey)) || [];
+    comments.unshift(commentData);
+    localStorage.setItem(storageKey, JSON.stringify(comments));
+
+    showComment(commentData, 0);
+
+    document.getElementById("name").value = "";
+    document.getElementById("comment").value = "";
+});
+
+// Show comment
+function showComment(data, index) {
+    let div = document.createElement("div");
+    div.className = "comment";
+
+    div.innerHTML = `
+        <b>${data.name}:</b> ${data.comment}<br>
+        <button onclick="deleteComment(${index})">Delete</button>
+    `;
+
+    document.getElementById("comments").prepend(div);
+}
+
+// Delete comment
+function deleteComment(index) {
+    let comments = JSON.parse(localStorage.getItem(storageKey)) || [];
+    comments.splice(index, 1);
+    localStorage.setItem(storageKey, JSON.stringify(comments));
+    location.reload();
+}
+</script>
+
+</body>
+</html>
+
+        

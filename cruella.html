@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>6 Interstellar reviews</title>
+</head>
+<body style="background-color: black; color: white;">
+    <h1 align="center"><font color="red">Cruella reviews</font></h1><hr><hr>
+<font size="5">
+<pre>
+
+
+
+
+1] as_if_itsanisha:
+Cruella is a visually stylish and fun movie. I loved 
+the costumes, the music, and Emma Stone’s acting. 
+The story shows how Estella becomes Cruella, and 
+it’s interesting to watch her transformation. Some 
+scenes are a bit dramatic, but overall the movie is 
+entertaining and creative. It’s great for people who 
+enjoy fashion and exciting characters.
+<hr>
+
+2] allcool.kartik
+Cruella is a bold reimagining of a classic Disney 
+villain, driven by Emma Stone’s excellent performance. 
+The film shines in its production design, costume artistry, 
+and 1970s punk-inspired aesthetic. However, the narrative 
+occasionally feels predictable and leans heavily on 
+style over substance. Still, the film succeeds in delivering 
+a unique origin story with strong visual appeal and great performances.
+<hr>
+
+3]blackloverboy3
+I absolutely loved Cruella! The fashion, the attitude, the 
+music—everything was perfect. Emma Stone plays the role with 
+so much energy and confidence that it’s impossible to look 
+away. The rivalry between Cruella and the Baroness was super 
+entertaining. The movie felt cool, stylish, and powerful. 
+Definitely one of my favourite Disney live-action films!
+<hr>
+
+4]roshni_aturhelp
+Cruella offers an interesting study in character development, 
+identity formation, and societal expectations. The film explores 
+themes of class struggle, artistic expression, and moral ambiguity. 
+The fashion-centric narrative reflects how style can function as 
+a form of rebellion and self-definition. Additionally, the film 
+reinterprets villainy through a psychological and socio-cultural 
+lens, making it valuable for media and gender studies analysis.
+<hr>
+
+5]praffulthebest
+I really enjoyed Cruella. The movie looks great, and the outfits
+ are amazing. Emma Stone does a fantastic job, and the story is 
+fun to follow. Some scenes are a little long, but the humour 
+and drama keep it interesting. It’s a good movie to watch if you 
+like fashion and strong characters
+<hr>
+
+</pre>
+</font>
+</body>
+</html>
+
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Reviews</title>
+
+<style>
+.comment-box {
+    width: 80%;
+    margin: 20px auto;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    background-color: #df0000;
+}
+
+.comment {
+    margin-bottom: 15px;
+    padding: 10px;
+    border: 1px solid #e60d0d;
+    border-radius: 5px;
+    background-color: white;
+    text-align: left;
+}
+
+.shadow-box {
+    box-shadow: 0px 0px 10px rgba(0,0,1,0.5);
+    border-radius: 8px;
+    padding: 15px;
+    background-color: red;
+    color: black;
+}
+</style>
+</head>
+
+<body align="center" bgcolor="grey">
+
+<p class="shadow-box">
+<font size="6">Here you can add some reviews of your own to help others!</font>
+</p>
+
+<div class="comment-box">
+<h2><font size="6">Reviews</font></h2>
+
+<form id="commentForm">
+    Your Name:<br>
+    <input type="text" id="name" required><br><br>
+
+    Comment:<br>
+    <textarea id="comment" rows="4" required></textarea><br><br>
+
+    <button type="submit"><font size="5">Post Comment</font></button>
+</form>
+</div>
+
+<div id="comments"></div>
+
+<script>
+const movieName = "cruella";
+const storageKey = "comments_" + movieName;
+
+// Load saved comments
+window.onload = function () {
+    let savedComments = JSON.parse(localStorage.getItem(storageKey)) || [];
+    savedComments.forEach((c, i) => showComment(c, i));
+};
+
+// Save comment
+document.getElementById("commentForm").addEventListener("submit", function (e) {
+    e.preventDefault();
+
+    let name = document.getElementById("name").value;
+    let comment = document.getElementById("comment").value;
+
+    let commentData = { name, comment };
+
+    let comments = JSON.parse(localStorage.getItem(storageKey)) || [];
+    comments.unshift(commentData);
+    localStorage.setItem(storageKey, JSON.stringify(comments));
+
+    showComment(commentData, 0);
+
+    document.getElementById("name").value = "";
+    document.getElementById("comment").value = "";
+});
+
+// Show comment
+function showComment(data, index) {
+    let div = document.createElement("div");
+    div.className = "comment";
+
+    div.innerHTML = `
+        <b>${data.name}:</b> ${data.comment}<br>
+        <button onclick="deleteComment(${index})">Delete</button>
+    `;
+
+    document.getElementById("comments").prepend(div);
+}
+
+// Delete comment
+function deleteComment(index) {
+    let comments = JSON.parse(localStorage.getItem(storageKey)) || [];
+    comments.splice(index, 1);
+    localStorage.setItem(storageKey, JSON.stringify(comments));
+    location.reload();
+}
+</script>
+
+</body>
+</html>
+
+        

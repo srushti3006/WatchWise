@@ -1,0 +1,102 @@
+<html>
+<head>
+  <style>
+    /* CSS for different styles */
+    .paragraph1 {
+      color: RED;
+      font-size: 50px;
+ text-shadow: 2px 2px 5px gray;
+    text-transform: uppercase;
+     
+    }
+    .paragraph2 {
+      color: yellow;
+      font-size: 24px;
+    font-family: 'caflisch script', monospace; 
+     box-shadow: 0px 0px 10px rgba(0, 0, 1, 0.5);
+    border-radius: 8px;
+    padding: 15px;
+     background-color: red;
+    }
+    .paragraph3 {
+      color: black;
+      font-size: 24px;
+      font-family: 'caflisch script', monospace;  
+       background-color: white;
+       color: black; }
+.paragraph4 {
+      color: yellow;
+      font-size: 30px;
+ text-shadow: 2px 2px 5px gray;}
+    
+    .nav-button {
+      display: inline-block; /* Allows setting width/height and padding */
+      padding: 10px 20px;
+      margin: 10px;
+      background-color: blue; /* Different color */
+      color: white; /* Text color */
+      text-decoration: none; /* Remove underline */
+      border-radius: 5px; /* Rounded corners */
+      font-size: 20px;
+      font-weight: bold;
+      transition: background-color 0.3s; /* Smooth hover effect */
+      box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.5); /* Shadow to make it pop */
+    }
+    .nav-button:hover {
+      background-color: darkblue; /* Darker color on hover */
+    }
+    /* Specific color for the second button */
+    .nav-button.movie {
+        background-color: green;
+    }
+    .nav-button.movie:hover {
+        background-color: darkgreen;
+    }
+  </style>
+</head>
+
+<body bgcolor="black"
+  <p class="paragraph1" align="center">WatchWise.<br>
+
+</p>
+<p class="paragraph4"align="center" font size="3">
+Find your next Favourite.</p>
+  
+<hr color="red">  <p class="paragraph2">
+Hello there! I'm sure you watch Movies and Films in your free time.Tell everyone about your thoughts about those movies!</p>
+  
+<hr color="red">
+
+<p><font size="5" color="white">
+you want to watch a new series or a movie? but don't know if thats worth your time? or maybe you don't know if thats your type! take a look what others think about it and decide!</p>
+
+
+<a href="series.html"><p><font size="6" color="yellow">series</p></a>
+
+<a href="movie.html"> <p><font size="6" color="yellow">movies</p> </a>
+
+  <p class="paragraph3">If you're wondering to start a new series and do not know if it's worth watching, then take a look at what others think about it! <br> <br> <hr><font size="5"  color="white "style="calfisch script">
+Explore the world of entertainment with WatchWise, your ultimate destination for insightful and comprehensive reviews. Whether you're a binge-watcher looking for your next obsession or a casual viewer seeking recommendations, we've got you covered.
+</font>
+</p><hr color="red">
+</body>
+</html>
+
+
+
+<style>
+  .shadow-box {
+    box-shadow: 0px 0px 10px rgba(0, 0, 1, 0.5);
+    border-radius: 8px;
+    padding: 15px;
+    background-color:black;
+  }
+</style>
+
+
+
+
+
+
+
+

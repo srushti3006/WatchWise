@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>6 Interstellar reviews</title>
+</head>
+<body style="background-color: black; color: white;">
+    <h1 align="center"><font color="red"> The Hangover reviews</font></h1><hr><hr>
+<font size="5">
+<pre>
+
+
+
+
+1] as_if_itsanisha:
+The Hangover is one of the funniest movies I’ve seen. the 
+story is crazy and unpredictable, and the characters make 
+the movie even better. I kept laughing in almost every scene. 
+It’s a light-hearted comedy that’s perfect for watching with 
+friends. Some jokes are a bit adult, but overall it’s really entertaining.
+<hr>
+
+2] allcool.kartik
+The Hangover is a well-crafted comedy that cleverly combines 
+chaos, mystery, and humor. The film’s structure—waking up with 
+no memory and retracing the wild night—keeps the audience engaged 
+throughout. Zach Galifianakis delivers a standout performance as Alan, 
+contributing to the film’s unique comedic tone. While some jokes 
+rely on shock value, the pacing, chemistry among the cast, and 
+creative writing make it a memorable comedy.
+<hr>
+
+3]blackloverboy3
+I absolutely loved The Hangover! From start to finish, it’s hilarious. 
+The storyline is wild, and every character adds something special. Alan, 
+Stu, and Phil make the perfect chaotic team. The twists made me laugh out 
+loud, especially when they finally find out what happened the night 
+before. It’s one of my favorite comedy movies ever—super fun and entertaining!
+<hr>
+
+4]roshni_aturhelp
+The Hangover presents an interesting case study in modern comedic 
+storytelling. The film uses the “lost memory” narrative to explore 
+themes of masculinity, friendship, irresponsibility, and social expectations. 
+Through exaggerated situations, it reflects how contemporary comedies 
+rely on shock humor and fast-paced narrative structures. Despite its 
+comedic tone, the film offers insight into group dynamics, personal identity, 
+and the consequences of impulsive behavior.
+<hr>
+
+5]praffulthebest
+I enjoyed watching The Hangover because it’s funny and unpredictable. 
+The characters get into crazy situations, and it keeps you guessing how 
+they will fix everything. It’s not too serious—just a fun movie to relax with. 
+Some scenes are silly, but that’s what makes it entertaining. A great choice 
+if you like light comedy.
+<hr>
+
+</pre>
+</font>
+</body>
+</html>
+
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Reviews</title>
+
+<style>
+.comment-box {
+    width: 80%;
+    margin: 20px auto;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    background-color: #df0000;
+}
+
+.comment {
+    margin-bottom: 15px;
+    padding: 10px;
+    border: 1px solid #e60d0d;
+    border-radius: 5px;
+    background-color: white;
+    text-align: left;
+}
+
+.shadow-box {
+    box-shadow: 0px 0px 10px rgba(0,0,1,0.5);
+    border-radius: 8px;
+    padding: 15px;
+    background-color: red;
+    color: black;
+}
+</style>
+</head>
+
+<body align="center" bgcolor="grey">
+
+<p class="shadow-box">
+<font size="6">Here you can add some reviews of your own to help others!</font>
+</p>
+
+<div class="comment-box">
+<h2><font size="6">Reviews</font></h2>
+
+<form id="commentForm">
+    Your Name:<br>
+    <input type="text" id="name" required><br><br>
+
+    Comment:<br>
+    <textarea id="comment" rows="4" required></textarea><br><br>
+
+    <button type="submit"><font size="5">Post Comment</font></button>
+</form>
+</div>
+
+<div id="comments"></div>
+
+<script>
+const movieName = "hangover";
+const storageKey = "comments_" + movieName;
+
+// Load saved comments
+window.onload = function () {
+    let savedComments = JSON.parse(localStorage.getItem(storageKey)) || [];
+    savedComments.forEach((c, i) => showComment(c, i));
+};
+
+// Save comment
+document.getElementById("commentForm").addEventListener("submit", function (e) {
+    e.preventDefault();
+
+    let name = document.getElementById("name").value;
+    let comment = document.getElementById("comment").value;
+
+    let commentData = { name, comment };
+
+    let comments = JSON.parse(localStorage.getItem(storageKey)) || [];
+    comments.unshift(commentData);
+    localStorage.setItem(storageKey, JSON.stringify(comments));
+
+    showComment(commentData, 0);
+
+    document.getElementById("name").value = "";
+    document.getElementById("comment").value = "";
+});
+
+// Show comment
+function showComment(data, index) {
+    let div = document.createElement("div");
+    div.className = "comment";
+
+    div.innerHTML = `
+        <b>${data.name}:</b> ${data.comment}<br>
+        <button onclick="deleteComment(${index})">Delete</button>
+    `;
+
+    document.getElementById("comments").prepend(div);
+}
+
+// Delete comment
+function deleteComment(index) {
+    let comments = JSON.parse(localStorage.getItem(storageKey)) || [];
+    comments.splice(index, 1);
+    localStorage.setItem(storageKey, JSON.stringify(comments));
+    location.reload();
+}
+</script>
+
+</body>
+</html>
+
+        
+
+
+
+
+
+
+

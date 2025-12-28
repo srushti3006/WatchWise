@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>6 Interstellar reviews</title>
+</head>
+<body style="background-color: black; color: white;">
+    <h1 align="center"><font color="red"> Brooklyn Nine‑Nine reviews</font></h1><hr><hr>
+<font size="5">
+<pre>
+
+
+
+
+1] TheSitcomFan
+“Brooklyn Nine‑Nine” feels like a modern classic sitcom, with the kind 
+of ensemble chemistry people usually associate with older hits. The show 
+mixes fast, joke‑dense dialogue with surprisingly warm, emotional beats, 
+especially in the early seasons, which many viewers consider the series 
+at its best.For anyone who wants something light, watchable, and 
+character‑driven, it is an easy recommendation.
+<hr>
+
+2] allcool.kartik
+What stands out most is how attached you become to the squad: Jake, Amy, 
+Holt, Rosa, Terry, Gina, and Boyle all have distinct personalities that grow
+ over eight seasons. Many reviewers highlight the strong character development 
+and memorable recurring side characters, which help the show stay engaging
+ well into the later seasons. Even when a particular episode’s case is 
+forgettable, the character interactions usually carry it.
+<hr>
+
+3]blackloverboy3
+While “Brooklyn Nine‑Nine” starts out as a sharp workplace comedy, not 
+everyone is thrilled with its evolution. Some critics and fans argue that 
+in the final season the tone shifts, becoming more overtly political and less 
+focused on pure comedy, which they feel undercuts the earlier carefree charm.For 
+those sensitive to tonal changes, the last season may feel uneven compared with 
+the show’s strongest middle stretch.
+<hr>
+
+4]roshni_aturhelp
+Others see the same later‑season shift as a strength, appreciating how the show 
+tackles certain social issues while still aiming to keep things light. Commenters 
+often praise it as one of the few network comedies that tries to handle topics 
+like policing and diversity with humor and empathy without entirely losing its 
+fun, ensemble vibe.If you enjoy comedies that occasionally say something about 
+the real world, this aspect can be a major plus.
+<hr>
+
+5]praffulthebest
+From a binge‑watch perspective, “Brooklyn Nine‑Nine” is ideal: eight relatively 
+short seasons, mostly self‑contained episodes, and a high laugh‑per‑minute rate 
+in the first several years. Many viewers mention they flew through the entire
+ series and still revisit favorite episodes because the jokes and dynamics remain 
+comforting on rewatch. It is particularly good as a “comfort show” to unwind with
+ after a long day.
+<hr>
+
+</pre>
+</font>
+</body>
+</html>
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Reviews</title>
+
+<style>
+.comment-box {
+    width: 80%;
+    margin: 20px auto;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    background-color: #df0000;
+}
+
+.comment {
+    margin-bottom: 15px;
+    padding: 10px;
+    border: 1px solid #e60d0d;
+    border-radius: 5px;
+    background-color: white;
+    text-align: left;
+}
+
+.shadow-box {
+    box-shadow: 0px 0px 10px rgba(0,0,1,0.5);
+    border-radius: 8px;
+    padding: 15px;
+    background-color: red;
+    color: black;
+}
+</style>
+</head>
+
+<body align="center" bgcolor="grey">
+
+<p class="shadow-box">
+<font size="6">Here you can add some reviews of your own to help others!</font>
+</p>
+
+<div class="comment-box">
+<h2><font size="6">Reviews</font></h2>
+
+<form id="commentForm">
+    Your Name:<br>
+    <input type="text" id="name" required><br><br>
+
+    Comment:<br>
+    <textarea id="comment" rows="4" required></textarea><br><br>
+
+    <button type="submit"><font size="5">Post Comment</font></button>
+</form>
+</div>
+
+<div id="comments"></div>
+
+<script>
+const movieName = "bnn";
+const storageKey = "comments_" + movieName;
+
+// Load saved comments
+window.onload = function () {
+    let savedComments = JSON.parse(localStorage.getItem(storageKey)) || [];
+    savedComments.forEach((c, i) => showComment(c, i));
+};
+
+// Save comment
+document.getElementById("commentForm").addEventListener("submit", function (e) {
+    e.preventDefault();
+
+    let name = document.getElementById("name").value;
+    let comment = document.getElementById("comment").value;
+
+    let commentData = { name, comment };
+
+    let comments = JSON.parse(localStorage.getItem(storageKey)) || [];
+    comments.unshift(commentData);
+    localStorage.setItem(storageKey, JSON.stringify(comments));
+
+    showComment(commentData, 0);
+
+    document.getElementById("name").value = "";
+    document.getElementById("comment").value = "";
+});
+
+// Show comment
+function showComment(data, index) {
+    let div = document.createElement("div");
+    div.className = "comment";
+
+    div.innerHTML = `
+        <b>${data.name}:</b> ${data.comment}<br>
+        <button onclick="deleteComment(${index})">Delete</button>
+    `;
+
+    document.getElementById("comments").prepend(div);
+}
+
+// Delete comment
+function deleteComment(index) {
+    let comments = JSON.parse(localStorage.getItem(storageKey)) || [];
+    comments.splice(index, 1);
+    localStorage.setItem(storageKey, JSON.stringify(comments));
+    location.reload();
+}
+</script>
+
+</body>
+</html>
+
+        
+
+
+
+
+

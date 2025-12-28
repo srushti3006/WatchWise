@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>6 Interstellar reviews</title>
+</head>
+<body style="background-color: black; color: white;">
+    <h1 align="center"><font color="red">Lost in Space reviews</font></h1><hr><hr>
+<font size="5">
+<pre>
+
+
+
+1] GalaxyGazer	:
+Lost in Space blew me away. The visuals are 
+stunning—every planet feels alive and dangerous. 
+The Robinson family dynamic is the heart of the show, 
+and Will’s bond with the Robot had me emotional more 
+times than I want to admit. It’s adventurous, smart, 
+and surprisingly heartfelt. One of the best sci-fi 
+reboots ever.
+<hr>
+
+2]SpaceSnack:
+Pretty good, but not perfect. The family moments were
+ sweet, and the effects were amazing, but some 
+episodes dragged and felt repetitive—always something 
+going wrong with the ship or the planet. Still, the 
+cast did a great job, especially Judy and Don. Worth 
+watching, but not something I’d binge twice.
+<hr>
+
+3]OrbitingCritic
+Not really for me. The plot felt too slow and 
+predictable, and the emotional scenes were a bit 
+overdone. I also wanted deeper sci-fi concepts
+ instead of constant survival drama. I get why people
+ love it, but I personally found it underwhelming. 
+Robot was the best part, though—no contest.
+<hr>
+
+4]StarlightNavigator
+Absolutely phenomenal. The show balances family drama, 
+sci-fi mystery, and suspense so beautifully. the 
+cinematography is gorgeous, and every episode feels 
+like a mini movie. Penny’s character development was 
+one of my favorites, and the twists kept me engaged. 
+An epic, emotional space adventure.
+<hr>
+
+5]TechieVoyager
+A really solid series. The science isn’t always realistic, 
+but the creativity and suspense make up for it. The 
+pacing improves with each season, and Dr. Smith’s 
+manipulative chaos adds so much tension. I loved the 
+worldbuilding and the idea of humanity struggling to 
+survive in unknown galaxies. A great family-friendly 
+sci-fi show.
+<hr>
+
+ </pre>
+</font>
+</body>
+</html>
+
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Reviews</title>
+
+<style>
+.comment-box {
+    width: 80%;
+    margin: 20px auto;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    background-color: #df0000;
+}
+
+.comment {
+    margin-bottom: 15px;
+    padding: 10px;
+    border: 1px solid #e60d0d;
+    border-radius: 5px;
+    background-color: white;
+    text-align: left;
+}
+
+.shadow-box {
+    box-shadow: 0px 0px 10px rgba(0,0,1,0.5);
+    border-radius: 8px;
+    padding: 15px;
+    background-color: red;
+    color: black;
+}
+</style>
+</head>
+
+<body align="center" bgcolor="grey">
+
+<p class="shadow-box">
+<font size="6">Here you can add some reviews of your own to help others!</font>
+</p>
+
+<div class="comment-box">
+<h2><font size="6">Reviews</font></h2>
+
+<form id="commentForm">
+    Your Name:<br>
+    <input type="text" id="name" required><br><br>
+
+    Comment:<br>
+    <textarea id="comment" rows="4" required></textarea><br><br>
+
+    <button type="submit"><font size="5">Post Comment</font></button>
+</form>
+</div>
+
+<div id="comments"></div>
+
+<script>
+const movieName = "lis";
+const storageKey = "comments_" + movieName;
+
+// Load saved comments
+window.onload = function () {
+    let savedComments = JSON.parse(localStorage.getItem(storageKey)) || [];
+    savedComments.forEach((c, i) => showComment(c, i));
+};
+
+// Save comment
+document.getElementById("commentForm").addEventListener("submit", function (e) {
+    e.preventDefault();
+
+    let name = document.getElementById("name").value;
+    let comment = document.getElementById("comment").value;
+
+    let commentData = { name, comment };
+
+    let comments = JSON.parse(localStorage.getItem(storageKey)) || [];
+    comments.unshift(commentData);
+    localStorage.setItem(storageKey, JSON.stringify(comments));
+
+    showComment(commentData, 0);
+
+    document.getElementById("name").value = "";
+    document.getElementById("comment").value = "";
+});
+
+// Show comment
+function showComment(data, index) {
+    let div = document.createElement("div");
+    div.className = "comment";
+
+    div.innerHTML = `
+        <b>${data.name}:</b> ${data.comment}<br>
+        <button onclick="deleteComment(${index})">Delete</button>
+    `;
+
+    document.getElementById("comments").prepend(div);
+}
+
+// Delete comment
+function deleteComment(index) {
+    let comments = JSON.parse(localStorage.getItem(storageKey)) || [];
+    comments.splice(index, 1);
+    localStorage.setItem(storageKey, JSON.stringify(comments));
+    location.reload();
+}
+</script>
+
+</body>
+</html>
+
+        

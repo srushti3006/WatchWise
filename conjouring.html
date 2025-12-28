@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>6 Interstellar reviews</title>
+</head>
+<body style="background-color: black; color: white;">
+    <h1 align="center"><font color="red">Conjouring reviews</font></h1><hr><hr>
+<font size="5">
+    <p> 1]. Ksa-201026:<br>
+ 
+The Hardcore Horror Fan
+“The Conjuring” is a near-perfect haunted house ride, packed with expertly timed jump scares and a suffocating sense of dread from the opening scenes in the Perron farmhouse. The sound design and practical effects keep everything grounded and genuinely frightening instead of cartoony or over-the-top.<hr>
+
+    <p> 2].ravesch-8377029: <br>
+The Casual Moviegoer 
+Even for someone who doesn’t usually watch horror, “The Conjuring” is gripping because it feels like a complete story about a family, not just a chain of scary scenes.The balance of slow-burn buildup, a few well-earned shocks, and a clear emotional arc makes it easy to follow and surprisingly engaging.</p>
+<hr>
+    <p> 3].kosmasp31:<br>
+ The Character-Focused Viewer
+What stands out most is the relationship between Ed and Lorraine Warren; their calm, empathetic presence anchors the chaos and gives the film unexpected warmth. Instead of treating them as generic ghost hunters, the movie lets their faith, fears, and quiet moments shine, which makes the danger around them feel more personal.</p><hr>
+
+    <p>4].Jared_Andrews13:
+ The Skeptic of “Based on True Events”
+The “based on a true story” label feels more like marketing than documentary truth, but it does help the movie lean into a serious tone instead of camp. Even if the real-life details are debatable, the film uses that framing to build a strong atmosphere of inevitability, as if the haunting is part of something larger and older.</p><hr>
+
+    <p>5].aheaven200525:<br>
+From a craft perspective, “The Conjuring” is impressive: James Wan’s camera work glides through the house to map the space, then uses tight close-ups and long takes to stretch tension to the breaking point.The muted color palette, 1970s period detail, and restrained use of music all work together to create a classic, almost old-school horror feel.
+
+  </font><hr>
+
+</body>
+</html>
+
+
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Reviews</title>
+
+<style>
+.comment-box {
+    width: 80%;
+    margin: 20px auto;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    background-color: #df0000;
+}
+
+.comment {
+    margin-bottom: 15px;
+    padding: 10px;
+    border: 1px solid #e60d0d;
+    border-radius: 5px;
+    background-color: white;
+    text-align: left;
+}
+
+.shadow-box {
+    box-shadow: 0px 0px 10px rgba(0,0,1,0.5);
+    border-radius: 8px;
+    padding: 15px;
+    background-color: red;
+    color: black;
+}
+</style>
+</head>
+
+<body align="center" bgcolor="grey">
+
+<p class="shadow-box">
+<font size="6">Here you can add some reviews of your own to help others!</font>
+</p>
+
+<div class="comment-box">
+<h2><font size="6">Reviews</font></h2>
+
+<form id="commentForm">
+    Your Name:<br>
+    <input type="text" id="name" required><br><br>
+
+    Comment:<br>
+    <textarea id="comment" rows="4" required></textarea><br><br>
+
+    <button type="submit"><font size="5">Post Comment</font></button>
+</form>
+</div>
+
+<div id="comments"></div>
+
+<script>
+const movieName = "conjouring";
+const storageKey = "comments_" + movieName;
+
+// Load saved comments
+window.onload = function () {
+    let savedComments = JSON.parse(localStorage.getItem(storageKey)) || [];
+    savedComments.forEach((c, i) => showComment(c, i));
+};
+
+// Save comment
+document.getElementById("commentForm").addEventListener("submit", function (e) {
+    e.preventDefault();
+
+    let name = document.getElementById("name").value;
+    let comment = document.getElementById("comment").value;
+
+    let commentData = { name, comment };
+
+    let comments = JSON.parse(localStorage.getItem(storageKey)) || [];
+    comments.unshift(commentData);
+    localStorage.setItem(storageKey, JSON.stringify(comments));
+
+    showComment(commentData, 0);
+
+    document.getElementById("name").value = "";
+    document.getElementById("comment").value = "";
+});
+
+// Show comment
+function showComment(data, index) {
+    let div = document.createElement("div");
+    div.className = "comment";
+
+    div.innerHTML = `
+        <b>${data.name}:</b> ${data.comment}<br>
+        <button onclick="deleteComment(${index})">Delete</button>
+    `;
+
+    document.getElementById("comments").prepend(div);
+}
+
+// Delete comment
+function deleteComment(index) {
+    let comments = JSON.parse(localStorage.getItem(storageKey)) || [];
+    comments.splice(index, 1);
+    localStorage.setItem(storageKey, JSON.stringify(comments));
+    location.reload();
+}
+</script>
+
+</body>
+</html>
+
+        
+
+
+
+
+
+
+
+
